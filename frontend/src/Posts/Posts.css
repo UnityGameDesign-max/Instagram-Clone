@@ -1,5 +1,7 @@
-.post{
+.posts{
     max-width: 500px;
+    background:white;
+    border: 1px solid lightgray;
 }
 
 .post__avatar__title{
@@ -15,7 +17,10 @@
 .post__img{
     width: 100%;
     object-fit: contain;
+    border-top: 1px solid lightgray;
+    border-bottom: 1px solid lightgray;
 }
 .post__text{
     font-weight: normal;
+    padding:20px;
 }
