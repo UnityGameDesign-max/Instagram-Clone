@@ -1,0 +1,21 @@
+.post{
+    max-width: 500px;
+}
+
+.post__avatar__title{
+    display: flex;
+    align-items: center;
+    padding: 20px;
+}
+
+.post__avatar{
+    margin-right: 10px;
+}
+
+.post__img{
+    width: 100%;
+    object-fit: contain;
+}
+.post__text{
+    font-weight: normal;
+}
