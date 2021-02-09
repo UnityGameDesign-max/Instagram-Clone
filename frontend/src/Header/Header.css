@@ -1,4 +1,13 @@
-.header_logo{
-    width: 120px;
+.header{
+    background-color: white;
+    padding: 10px;
+    border-bottom: 1px solid lightgray;
     object-fit: contain;
 }
+
+.header__logo{
+    width: 120px;
+    object-fit: contain;
+    
+}
+
