@@ -7,3 +7,8 @@
   background-color: #fafafa;
   height: max-content;
 }
+
+.app__signup{
+  display: flex;
+  flex-direction: column;
+}
