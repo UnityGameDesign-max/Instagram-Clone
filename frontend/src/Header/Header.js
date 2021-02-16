@@ -2,10 +2,9 @@ import React from 'react'
 import './Header.css'
 
 function Header() {
-    return (
+    return(
         <div className="header">
             <img className="header__logo" alt="" src={process.env.PUBLIC_URL + "/1200px-Instagram_logo.svg.png"} />
-         
         </div>
     )
 }
