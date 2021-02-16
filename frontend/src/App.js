@@ -158,20 +158,8 @@ function App() {
         </center>
       </div>
     </Modal>
-      
-      <Header  />
-        {user ? (
-          <Button onClick={() => auth.signOut()}>Logout</Button>
-        ): (
-          <Button onClick={() => setOpen(true)}>Sign Up</Button>
-        )}
-
-
-        {!user ? (
-          <Button onClick={() => setOpenSignIn(true)}>LogIn</Button>
-        ): (
-          <Button onClick={() => setOpen(true)}>Sign Up</Button>
-        )}
+       
+      <Header user={user} setOpenSignIn={setOpenSignIn} setOpen={setOpen} />
 
         
       <div className="app_posts">
