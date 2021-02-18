@@ -8,7 +8,7 @@ import { Button, Input } from '@material-ui/core'
 import { db } from './Firebase/firebase'
 import { auth } from './Firebase/firebase'
 import ImageUpload from './ImageUpload/ImageUpload'
-import InstagramEmbed from 'react-instagram-embed'
+import InstagramEmbed from 'react-instagram-embed';
 
 
 function getModalStyle(){
@@ -122,11 +122,6 @@ function App() {
 
   return (
     <div className="app">
-
-    
-     
-
-    
       <Modal open={open} onClose={() => setOpen(false)}>
         <div style={modalStyle} className={classes.paper}>
           <center>
@@ -145,19 +140,19 @@ function App() {
 
 
       <Modal open={openSignIn} onClose={() => setOpenSignIn(false)}>
-      <div style={modalStyle} className={classes.paper}>
-        <center>
-          <form className="app__signup">  
-            <img className="header__logo" alt="" src={process.env.PUBLIC_URL + "/1200px-Instagram_logo.svg.png"} />   
-            <Input placeholder="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)}/>   
-            <Input placeholder="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
-             
-            <Button type="submit" onClick={signIn}>Sign In</Button>
-            
-          </form>
-        </center>
-      </div>
-    </Modal>
+        <div style={modalStyle} className={classes.paper}>
+          <center>
+            <form className="app__signup">  
+              <img className="header__logo" alt="" src={process.env.PUBLIC_URL + "/1200px-Instagram_logo.svg.png"} />   
+              <Input placeholder="email" type="text" value={email} onChange={(e) => setEmail(e.target.value)}/>   
+              <Input placeholder="password" type="password" value={password} onChange={(e) => setPassword(e.target.value)}/>
+              
+              <Button type="submit" onClick={signIn}>Sign In</Button>
+              
+            </form>
+          </center>
+        </div>
+      </Modal>
        
       <Header user={user} setOpenSignIn={setOpenSignIn} setOpen={setOpen} />
 
@@ -171,26 +166,28 @@ function App() {
 
 
         <InstagramEmbed
-          url='https://www.instagram.com/p/B_uf9dmAGPw/'
-          maxWidth={320}
-          hideCaption={false}
-          containerTagName='div'
-          protocol = " "
-          injectScript
-          onLoading={() => {}}
-          onSuccess={() => {}}
-          onAfterRender={() => {}}
-          onFailure ={() => {}}
+        // url='https://instagr.am/p/Zw9o4/'
+        // clientAccessToken='123|456'
+        // maxWidth={320}
+        // hideCaption={false}
+        // containerTagName='div'
+        // protocol=''
+        // injectScript
+        // onLoading={() => {}}
+        // onSuccess={() => {}}
+        // onAfterRender={() => {}}
+        // onFailure={() => {}}
         />
       </div>
       
 
 
       {user?.displayName ? (
-        <ImageUpload username={user.displayName} />    
+        <ImageUpload username={user.displayName}  />    
         ): (
         <h3>Sorry you need to login to Upload</h3>
       )}
+        
 
    
      
