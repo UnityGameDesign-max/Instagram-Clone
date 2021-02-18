@@ -1,6 +1,11 @@
 import React, { useState, useEffect } from 'react'
 import './Posts.css'
 import Avatar from '@material-ui/core/Avatar'
+import FavoriteBorderIcon from '@material-ui/icons/FavoriteBorder';
+import SentimentSatisfiedOutlinedIcon from '@material-ui/icons/SentimentSatisfiedOutlined';
+import ChatBubbleOutlineOutlinedIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
+import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
+import IconButton from '@material-ui/core/IconButton'
 import { db } from '../Firebase/firebase'
 
 function Posts({ postId, user,post__img, username, caption, avatar__alt}) {
@@ -49,16 +54,35 @@ function Posts({ postId, user,post__img, username, caption, avatar__alt}) {
             </div>
             
             <img className="post__img" alt="" src={process.env.PUBLIC_URL + post__img} />
-            
-            
+
+            <div className="post__icons">
+                <div className="post_icons_left">
+                    <IconButton>
+                        <FavoriteBorderIcon className="post_like_button" />
+                    </IconButton>
+
+                    <IconButton>
+                        <ChatBubbleOutlineOutlinedIcon className="post_chats_button" />
+                    </IconButton>
+                </div>
+
+                <div className="post_icons_right">
+                    <IconButton>
+                        <BookmarkBorderIcon className="post_save_bookmarks"/>
+                    </IconButton>
+                </div>
+                
+
+            </div>
             <h4 className="post__text"><strong>{username}</strong> {caption}</h4>
 
+            
             <div className="post_comment">
                 {comments.map((comment) => {
                     <p>
                         <strong>{comment.username}</strong> {comment.text}
                     
-                    </p>
+                    </p> 
                 })}
             
             </div>
@@ -68,6 +92,10 @@ function Posts({ postId, user,post__img, username, caption, avatar__alt}) {
                     placeholder="comment..." value={comment}
                     onChange={(e) => setComment(e.target.value)} 
                 />
+            
+                <SentimentSatisfiedOutlinedIcon className="post__smileyface" />
+            
+                
 
                 <button className="post_button" disabled={!comment} type="submit" onClick={postComment}>
                     Post
