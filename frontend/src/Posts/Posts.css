@@ -38,10 +38,26 @@
     padding: 20px;
 }
 
+.post__icons{
+    display: flex;
+    justify-content:space-between;
+    align-items: center;
+}
+
+.post_like_button{
+    width: 20px;
+    margin-left: 10px;
+}
+
+
+.post__smileyface{
+    margin-top: 10px;
+}
+
 .post_input{
     flex: 1;
     border: none;
-    padding: 10px;
+    padding: 15px;
     border-top: 1px solid lightgray;
 }
 
@@ -49,7 +65,7 @@
     flex: 0;
     border: none;
     border-top: 1px solid lightgray;
-    color: #6082a3;
+    color: #0095f6;
     background-color: transparent;
     border-top: 1px solid lightgray;
 }
