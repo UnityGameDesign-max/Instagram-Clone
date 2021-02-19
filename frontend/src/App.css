@@ -16,3 +16,32 @@
 .app_posts{
   padding: 20px;
 }
+
+.posts__profile{
+  position: fixed;
+  display: flex;
+  flex-direction: row;
+}
+
+.suggestion__text{
+  margin-top: 10px;
+}
+
+.profile__info{
+  display: flex;
+  align-items: center;
+}
+
+.profile__info h5{
+  margin-left: 140px;
+}
+
+.app_posts{
+  flex: 0.6;
+  padding-right: 0;
+}
+
+.app_profile{
+  flex: 0.4;
+  margin-top: 30px;
+}
