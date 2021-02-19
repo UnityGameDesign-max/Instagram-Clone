@@ -9,7 +9,6 @@ function Profile({user}) {
            
             <div className="avatar__profile">
                 <div className="friend__suggestions">
-                     
                     <div className="user">
                         <Avatar />
                         <div className="user__details">
