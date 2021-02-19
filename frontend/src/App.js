@@ -177,11 +177,16 @@ function App() {
             <h5>See All</h5>
           </div>
 
-          <Profile user={user} />  
+          <Profile user={user} username="Lehlohonolo Mopeli" />
+          <Profile user={user}  username="Sandile Masango@1"/>
+          <Profile user={user}  username="Siphosihle Khumalo"/>
+          <Profile user={user}  username="Msawawa Masango"/>
           
         </div>
 
       </div>
+
+      {!user?.displayName ? (<h1>No user is logged In</h1>) :(<ImageUpload />)}
 
       
      
