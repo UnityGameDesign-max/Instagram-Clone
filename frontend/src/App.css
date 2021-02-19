@@ -18,7 +18,6 @@
 }
 
 .posts__profile{
-  position: fixed;
   display: flex;
   flex-direction: row;
 }
