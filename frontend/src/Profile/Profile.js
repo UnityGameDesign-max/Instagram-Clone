@@ -2,7 +2,7 @@ import React from 'react'
 import Avatar from '@material-ui/core/Avatar'
 import './Profile.css'
 
-function Profile({user}) {
+function Profile({username}) {
     return (
         <div className="profile">
 
@@ -12,7 +12,7 @@ function Profile({user}) {
                     <div className="user">
                         <Avatar />
                         <div className="user__details">
-                            <h5>Lehlohonolo Mopeli</h5>
+                            <h5>{username}</h5>
                             <small>Follows you</small>
                         </div>
                     </div>
