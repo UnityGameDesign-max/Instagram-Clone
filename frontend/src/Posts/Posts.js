@@ -6,6 +6,7 @@ import SentimentSatisfiedOutlinedIcon from '@material-ui/icons/SentimentSatisfie
 import ChatBubbleOutlineOutlinedIcon from '@material-ui/icons/ChatBubbleOutlineOutlined';
 import BookmarkBorderIcon from '@material-ui/icons/BookmarkBorder';
 import IconButton from '@material-ui/core/IconButton'
+import red from '@material-ui/core/colors/red'
 import { db } from '../Firebase/firebase'
 
 function Posts({ postId, user,post__img, username, caption, avatar__alt}) {
@@ -53,12 +54,12 @@ function Posts({ postId, user,post__img, username, caption, avatar__alt}) {
                 <h3>{username}</h3>
             </div>
             
-            <img className="post__img" alt="" src={process.env.PUBLIC_URL + post__img} />
+            <img className="post__img" alt="" src={post__img} />
 
             <div className="post__icons">
                 <div className="post_icons_left">
                     <IconButton>
-                        <FavoriteBorderIcon className="post_like_button" />
+                        <FavoriteBorderIcon fill={red} className="post_like_button" />
                     </IconButton>
 
                     <IconButton>
