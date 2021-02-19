@@ -3,12 +3,14 @@ import './App.css';
 import Header from './Header/Header'
 import Posts from './Posts/Posts'
 import Modal from '@material-ui/core/Modal'
+import Avatar from '@material-ui/core/Avatar'
+import Profile from './Profile/Profile'
 import { makeStyles } from '@material-ui/core/styles'
 import { Button, Input } from '@material-ui/core'
 import { db } from './Firebase/firebase'
 import { auth } from './Firebase/firebase'
 import ImageUpload from './ImageUpload/ImageUpload'
-import InstagramEmbed from 'react-instagram-embed';
+
 
 
 function getModalStyle(){
@@ -105,7 +107,6 @@ function App() {
       .catch((err) => alert(err.message))
       setOpen(false);
 
-
   }
 
 
@@ -114,7 +115,6 @@ function App() {
 
     auth.signInWithEmailAndPassword(email, password).catch((err) => alert(err.message))  
     
-
     setOpen(true);
 
   }
@@ -156,40 +156,34 @@ function App() {
        
       <Header user={user} setOpenSignIn={setOpenSignIn} setOpen={setOpen} />
 
-        
-      <div className="app_posts">
-        {
-          posts.map(({id , post}) =>(
-            <Posts key={id} postId={id} user={user} username={post.username} avatar__alt={post.avatar__alt} caption={post.captions} post__img={post.post__img}/>
-          ))
-        }
-
-
-        <InstagramEmbed
-        // url='https://instagr.am/p/Zw9o4/'
-        // clientAccessToken='123|456'
-        // maxWidth={320}
-        // hideCaption={false}
-        // containerTagName='div'
-        // protocol=''
-        // injectScript
-        // onLoading={() => {}}
-        // onSuccess={() => {}}
-        // onAfterRender={() => {}}
-        // onFailure={() => {}}
-        />
-      </div>
       
 
+      <div className="posts__profile">
+      
+        <div className="app_posts">
+          {
+            posts.map(({id , post}) =>(
+              <Posts key={id} postId={id} user={user} username={post.username} avatar__alt={post.avatar__alt} caption={post.captions} post__img={post.post__img}/>
+            ))
+          }
 
-      {user?.displayName ? (
-        <ImageUpload username={user.displayName}  />    
-        ): (
-        <h3>Sorry you need to login to Upload</h3>
-      )}
+        </div>
         
 
-   
+        <div className="app_profile">
+          {!user ? "Haven't logged In" : (<Avatar />) }
+          <div className="profile__info">  
+            <h4 className="suggestion__text">Suggestions For You</h4>
+            <h5>See All</h5>
+          </div>
+
+          <Profile user={user} />  
+          
+        </div>
+
+      </div>
+
+      
      
     </div>
   );
