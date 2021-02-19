@@ -42,9 +42,10 @@ function ImageUpload({username}) {
                     .then(url => {
                         db.collection("posts").add({
                             // timestamp: firebase.fireatore.FindValue.serverTimestamp(),
-                            caption: caption,
-                            imageUrl: url,
+                            captions: caption,
+                            post__img: url,
                             username: username,
+                            avatar__alt: username
                         });
 
                         setProgress(0);
